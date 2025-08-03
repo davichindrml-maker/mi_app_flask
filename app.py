@@ -1,11 +1,16 @@
 from flask import Flask, render_template, request
 import pandas as pd
+import os
 
 # Inicializar Flask
-app = Flask(__name__)
+app = Flask(_name_)
 
 # Base de datos 
-usuarios = pd.read_csv("C:/Users/davic/Mensajes/Usuarios.csv",index_col=0)
+dic= {
+    "usuario": ["claulopez", "Jacksoooon","Phdian", "Choco_Marii", "nadiashit","berenice", "pedrinho","davidlima","Esqueyosoyasi"],
+    "contraseña": ["umpalumpa","moonwenee","Mimamimi","Ingatumais","vetealv","amoamifamilia","pecj","soydaviddd","DCOPN"]
+}
+usuarios=pd.DataFrame(data=dic)
 @app.route('/', methods=['GET', 'POST'])
 def login():
     mensaje = ''
@@ -27,5 +32,6 @@ def login():
     return render_template('login.html', mensaje=mensaje)
 
 # Ejecutar el servidor
-if __name__ == '__main__':
-    app.run(debug=True)
+if _name_ == "_main_":
+    port = int(os.environ.get("PORT", 5000))  # Toma el puerto que Render le indique
+    app.run(host="0.0.0.0", port=port)
