@@ -32,6 +32,7 @@ def login():
     return render_template('login.html', mensaje=mensaje)
 
 # Ejecutar el servidor
-if _name_ == "_main_":
+if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  # Toma el puerto que Render le indique
     app.run(host="0.0.0.0", port=port)
+
