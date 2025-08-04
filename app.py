@@ -7,8 +7,8 @@ app = Flask(__name__)
 
 # Base de datos 
 dic= {
-    "usuario": ["claulopez", "Jacksoooon","Phdian", "Choco_Marii", "nadiashit","berenice", "pedrinho","davidlima","Esqueyosoyasi"],
-    "contraseña": ["umpalumpa","moonwenee","Mimamimi","Ingatumais","vetealv","amoamifamilia","pecj","soydaviddd","DCOPN"]
+    "usuario": ["claulopez", "Jacksoooon","Phdian", "Choco_Marii", "nadiashit","berenice", "pedrinho","davidlima","Esqueyosoyasi","Leohernandez"],
+    "contraseña": ["umpalumpa","moonwenee","Mimamimi","Ingatumais","vetealv","amoamifamilia","pecj","soydaviddd","DCOPN","Energia"]
 }
 usuarios=pd.DataFrame(data=dic)
 @app.route('/', methods=['GET', 'POST'])
@@ -35,5 +35,6 @@ def login():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  # Toma el puerto que Render le indique
     app.run(host="0.0.0.0", port=port)
+
 
 
