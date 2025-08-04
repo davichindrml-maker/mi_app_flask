@@ -3,7 +3,7 @@ import pandas as pd
 import os
 
 # Inicializar Flask
-app = Flask(_name_)
+app = Flask(__name__)
 
 # Base de datos 
 dic= {
@@ -35,4 +35,5 @@ def login():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  # Toma el puerto que Render le indique
     app.run(host="0.0.0.0", port=port)
+
 
